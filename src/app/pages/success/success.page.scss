@@ -1,0 +1,36 @@
+
+.main_content_div {
+  padding: 20px;
+  text-align: center;
+
+  ion-label {
+    display: block;
+  }
+
+  ion-icon {
+    margin-top: 30px;
+    font-size: 70px;
+    color: var(--ion-color-primary);
+  }
+
+  .head_lbl {
+    font-family: "bold";
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .simple_lbl {
+    margin-top: 10px;
+    text-align: center;
+
+    span {
+      font-family: "semi-bold";
+    }
+  }
+
+  ion-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

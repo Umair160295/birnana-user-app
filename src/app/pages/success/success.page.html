@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHome()">
+        <img src="assets/imgs/ic_close.png"/>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Thank You</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="main_content_div">
+    <img class="ion-margin-top" src="assets/imgs/thankyou.png"/>
+    <ion-label class="head_lbl ion-margin-top"> {{util.translate('Your Order in process')}} </ion-label>
+    <ion-label class="simple_lbl">{{util.translate('You can view the order tracking info in the')}} <span>
+        {{util.translate('Profile')}}</span> {{util.translate('section')}} .</ion-label>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-button (click)="goToOrderInfo()"  expand="block" shape="round">
+      {{util.translate('TRACK YOUR ORDER')}}
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

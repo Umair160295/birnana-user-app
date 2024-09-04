@@ -1,0 +1,29 @@
+.search-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+   //z-index: 5;
+    background: rgba(255, 255, 255, 255);
+    border-radius: 8px;
+    padding: 10px;
+    //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .button-div{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+   //z-index: 5;
+    padding: 10px;
+  }
+  ion-list {
+    max-height: 200px;
+    overflow-y: auto;
+    background: transparent;
+  }
+  
+  ion-item {
+    --background: transparent;
+    --border-radius: 8px;
+  }

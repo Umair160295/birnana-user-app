@@ -1,0 +1,85 @@
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> {{util.translate('Add New Address')}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <ion-label position="floating"> {{util.translate('LOCATIONS')}} </ion-label> 
+  <ion-item>
+    <ion-label position="floating"> {{util.translate('HOUSE / FLAT NO')}} </ion-label>
+    <ion-input [(ngModel)]="house"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> {{util.translate('LANDMARK')}} </ion-label>
+    <ion-input [(ngModel)]="landmark"></ion-input>
+  </ion-item> 
+  <ion-item> 
+<ion-label position="floating"> {{util.translate('Pincode')}} </ion-label>
+    <ion-input type="text" [(ngModel)]="pincode"></ion-input> 
+       </ion-item> -->
+
+  <ion-label class="ion-padding-start ion-padding-top">Full Name</ion-label>
+  <ion-input class="ion-margin-top" [(ngModel)]="name" fill="outline" shape="round"
+    placeholder="Enter your full name" mode="md"></ion-input>
+  <ion-label class="ion-padding-start ion-padding-top">Email Address</ion-label>
+  <ion-input class="ion-margin-top" [(ngModel)]="email" fill="outline" shape="round" placeholder="Enter your email"
+    mode="md" type="email"></ion-input>
+  <ion-label class="ion-padding-start ion-padding-top">Phone</ion-label>
+  <ion-input class="ion-margin-top" [(ngModel)]="mobile" fill="outline" shape="round" placeholder="+254723222111"
+    mode="md"></ion-input>
+  <ion-label class="ion-padding-start ion-padding-top">Address</ion-label>
+  <ion-input class="ion-margin-top" [(ngModel)]="address" fill="outline" shape="round" placeholder="Type your address" (click)="openMap()"
+    mode="md"></ion-input>
+  <ion-row>
+    <ion-col size="6">
+      <ion-label class="ion-padding-start ion-padding-top">Zip Code</ion-label>
+      <ion-input class="ion-margin-top" [(ngModel)]="pincode" fill="outline" shape="round" placeholder="Enter here"
+        mode="md"></ion-input>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label class="ion-padding-start ion-padding-top">City</ion-label>
+      <ion-input class="ion-margin-top" [(ngModel)]="city" fill="outline" shape="round" placeholder="Enter here"
+        mode="md"></ion-input>
+    </ion-col>
+  </ion-row>
+
+
+
+
+  <ion-radio-group [(ngModel)]="title">
+    <ion-list-header>
+      <ion-label>{{util.translate('SAVE AS')}}</ion-label>
+    </ion-list-header>
+
+    <ion-item style="margin-top: 20px;">
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      <ion-label> {{util.translate('HOME')}} </ion-label>
+      <ion-radio value="home"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+      <ion-label> {{util.translate('WORK')}} </ion-label>
+      <ion-radio value="work"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="navigate-outline" slot="start"></ion-icon>
+      <ion-label> {{util.translate('OTHER')}} </ion-label>
+      <ion-radio value="other"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  <ion-button *ngIf="from =='new'" (click)="addAddress()" expand="block">
+    {{util.translate('Add')}}
+  </ion-button>
+
+  <ion-button *ngIf="from =='edit'" (click)="updateAddress()" expand="block">
+    {{util.translate('Update')}}
+  </ion-button>
+</ion-content>

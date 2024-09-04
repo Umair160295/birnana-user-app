@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Select Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #map id="map" style="height: 100%;"></div>
+  <div class="search-container">
+    <ion-item>
+      <ion-input
+        placeholder="Search for a place"
+        [(ngModel)]="searchQuery"
+        (ionInput)="searchPlace($event)"
+      ></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item *ngFor="let prediction of predictions" (click)="selectPlace(prediction)">
+        {{ prediction.description }}
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="button-div">
+    <ion-button color="primary" expand="block" (click)="dismissMap()">Done</ion-button>
+  </div>
+
+</ion-content>

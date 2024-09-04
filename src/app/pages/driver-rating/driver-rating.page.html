@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="close('fail')">
+        <img src="assets/imgs/ic_close.png"/>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Write Reviews </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+    <div class="main_div">
+      <div style="text-align: center;">
+        <h3 style="font-weight: bold;">Tell Us to Improve</h3>
+        <p>Your feedback helps us enhance our products and services to better meet your needs.</p>
+        <h4 style="font-weight: bold;">{{rate}}.0</h4>
+      </div>
+      <div class="info_div">
+        <div class="rattingBtns">
+          <ion-icon slot="start" [name]="rate >= 1 ? 'star' :'star-outline'" [color]="rate >= 1 ? 'primary' :'medium'"
+            (click)="onRatingChange(1)"></ion-icon>
+          <ion-icon slot="start" [name]="rate >= 2 ? 'star' :'star-outline'" [color]="rate >= 1 ? 'primary' :'medium'"
+            (click)="onRatingChange(2)"></ion-icon>
+          <ion-icon slot="start" [name]="rate >= 3 ? 'star' :'star-outline'" [color]="rate >= 1 ? 'primary' :'medium'"
+            (click)="onRatingChange(3)"></ion-icon>
+          <ion-icon slot="start" [name]="rate >= 4 ? 'star' :'star-outline'" [color]="rate >= 1 ? 'primary' :'medium'"
+            (click)="onRatingChange(4)"></ion-icon>
+          <ion-icon slot="start" [name]="rate >= 5 ? 'star' :'star-outline'" [color]="rate >= 1 ? 'primary' :'medium'"
+            (click)="onRatingChange(5)"></ion-icon>
+        </div>
+        <div class="name">
+          <div class="content_div">
+            <ion-textarea rows="12" type="text" [placeholder]="util.translate('Comment')" [(ngModel)]="comment">
+            </ion-textarea>
+          </div>
+        </div>
+        <ion-button (click)="submit()" expand="block" shape="round">
+          {{util.translate('Done')}}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,77 @@
+
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button (click)="util.onBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> {{util.translate('Coupons')}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="main_div" *ngIf="loggedIn() == true">
+    <ion-item>
+    <ion-row>
+      <ion-col size="4">
+        <div class="user_img" [ngStyle]="{'background-image':'url('+getProfile()+'),url(assets/bg.png)'}">
+        </div>
+      </ion-col>
+      <ion-col size="8">
+        <p class="username">{{getName()}}</p>
+        <p class="email">{{getEmail()}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let item of dummy">
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text animated style="width: 100%;height: 50px;"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+      </ion-label> <br>
+
+    </ion-item>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of list" (click)="selected(item)">
+        <div class="coupon-card">
+          <img [src]="api.mediaURL+item.image" onError="this.src='assets/imgs/user.png'" style="width:100%"/>
+          <div style="padding: 4px 8px;">
+            <p class="discount"><span *ngIf="item.type=='flat'">$</span>{{convertStringToInt(item.off)}}<span *ngIf="item.type=='per'">%</span> off</p>
+            <p class="c-name">{{item.name}}</p>
+            <p class="date"> {{getTime(item.from)}} - {{getTime(item.date_time)}} </p> 
+          </div>
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-item *ngFor="let item of list" (click)="selected(item)">
+      <ion-thumbnail>
+        <img [src]="api.mediaURL+item.image" onError="this.src='assets/imgs/user.png'" />
+      </ion-thumbnail>
+      <p class="couponDesc">
+        <span class="code"> {{util.translate('Use coupon code')}} {{item.name}} </span> <br>
+        <span class="desc"> {{item.descriptions}} </span> <br>
+        <span class="desc"> {{util.translate('Valid until')}} {{getTime(item.date_time)}} </span> <br>
+      </p>
+    </ion-item> -->
+  </ion-list>
+
+</ion-content>
+<ion-footer class="ion-no-border" >
+  <ion-toolbar color="light">
+  <ion-row>
+    <ion-col size="1"></ion-col>
+    <ion-col size="10">
+      <ion-button (click)="logout()" color="tertiary" expand="block"> {{util.translate('Log Out')}}
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+  </ion-toolbar>
+</ion-footer>

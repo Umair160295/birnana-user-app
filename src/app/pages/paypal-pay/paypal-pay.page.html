@@ -1,0 +1,17 @@
+
+<ion-header class="ion-no-border" mode="ios">
+  <ion-toolbar color="primary">
+    <ion-title>{{util.translate('Pay with PayPal')}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="payPalBtn">
+    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+  </div>
+</ion-content>

@@ -1,0 +1,60 @@
+
+ion-label {
+  display: block;
+}
+
+.group {
+  padding: 10px 15px;
+  width: 100%;
+  background: #fff !important;
+
+  .mainContent {
+    padding: 5px 10px;
+
+    .savedTitle {
+      font-family: "bold";
+    }
+
+    .noData {
+      border-radius: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 250px;
+    }
+
+    .list {
+      margin-top: 20px;
+      position: relative;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scroll-item {
+        flex: 0 0 auto;
+      }
+
+      .title {
+        font-family: "bold";
+        color: black;
+        font-size: 1rem;
+        white-space: pre-wrap;
+        text-transform: capitalize;
+      }
+
+      .name {
+    
+        font-size: 0.9rem;
+      }
+
+      .moreIcon {
+        position: absolute;
+        right: 0px;
+        top: 1px;
+      }
+    }
+  }
+}
